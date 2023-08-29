@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django import forms
-
+from django.contrib.auth.decorators import login_required
 from .models import Intern
 from django.http import HttpResponseRedirect
 from .forms import WorkSubmissionForm
@@ -9,7 +9,7 @@ from .forms import WorkSubmissionForm
 def home_page(request):
     # return HttpResponse("<b>Hello Interns</b>")
     return render(request, 'home.html') # templates auto search
-
+@login_required
 def work_submission(request):
     print('in work submission function')
     if request.method == 'POST':

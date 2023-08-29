@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Work Submission Form</title>
+    
 </head>
 <body>
     
@@ -27,6 +28,7 @@
             <input type="file" name="screenshot" accept="image/*" required><br>
             
             <button type="submit">Submit</button>
+            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
         </form>
     </div>
     
@@ -107,6 +109,20 @@ button:hover {
 .center {
     text-align: center;
 }
+.logout-button {
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
 
+    .logout-button:hover {
+        background-color: #45a049;
+    }
 </style>
 </html>
