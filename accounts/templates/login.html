@@ -1,20 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="{% static 'css\styles.css' %}">
 </head>
 <body>
     <div class="container">
-        {% load static %}
-        <img src = "{% static 'image.jpg' %}" height="200" width="200" class="d-inline-block align-top">
+        <img src="{% static 'images\intralogo.png' %}" height="100" width="100" class="logo">
     </div>
-    <div class="container mt-5">
+    <div class="container mt-5 login-container">
         {% if error_message %}
-        <p style="color: red;">{{ error_message }}</p>
+        <p class="error-message">{{ error_message }}</p>
         {% endif %}
-        <h2>Login</h2>
+        <h2 class="mb-4">Login</h2>
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
